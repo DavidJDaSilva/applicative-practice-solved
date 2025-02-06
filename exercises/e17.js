@@ -10,12 +10,34 @@
 
 export function minBy(array, cb) {
   // Your code goes here...
+  let minValue;
+  let minElement;
 
+  for (let element of array) {
+    const value = cb(element);
+    if (minValue === undefined || value < minValue) {
+      minValue = value;
+      minElement = element;
+    }
+  }
+
+  return minElement;
 }
 
 export function maxBy(array, cb) {
   // Your code goes here...
+  let maxValue = -Infinity;
+  let maxElement;
 
+  for (let element of array) {
+    const value = cb(element);
+    if (value > maxValue) {
+      maxValue = value;
+      maxElement = element;
+    }
+  }
+
+  return maxElement;
 }
 
 
