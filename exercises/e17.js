@@ -26,8 +26,10 @@ export function minBy(array, cb) {
 
 export function maxBy(array, cb) {
   // Your code goes here...
-  let maxValue = -Infinity;
-  let maxElement;
+  if (array.length === 0) return undefined;
+
+  let maxElement = array[0];
+  let maxValue = cb(maxElement);
 
   for (let element of array) {
     const value = cb(element);

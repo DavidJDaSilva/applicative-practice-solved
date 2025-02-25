@@ -4,24 +4,11 @@
  * Return example: 1902
  */
 
+import { maxBy } from "./e17";
+
 export function getGreatestDiscoveryYear(data) {
   // Your code goes here...
   // feel free to import your `maxBy` or `minBy` methods from previous lessons
-  let maxBy = function(array, cb) {
-    let maxValue = -Infinity;
-    let maxElement;
-
-  for (let element of array) {
-    const value = cb(element);
-    if (value > maxValue) {
-      maxValue = value;
-      maxElement = element;
-    }
-  }
-
-  return maxElement;
-  };
-
   const asteroidsByYear = data.asteroids.reduce((acc, asteroid) => {
     const year = asteroid.discoveryYear;
     if (!acc[year]) {
